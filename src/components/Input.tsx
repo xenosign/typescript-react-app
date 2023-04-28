@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useState } from "react";
 
 export default function Input() {
   const [string, setString] = useState<string>("");
@@ -8,10 +8,14 @@ export default function Input() {
     if (inputRef.current !== null) setString(inputRef.current.value);
   };
 
+  const handleEventChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setString(e.target.value);
+  };
+
   return (
     <>
       <h1>{string}</h1>
-      <input ref={inputRef} onChange={handleChange} />
+      <input ref={inputRef} onChange={handleEventChange} />
     </>
   );
 }
