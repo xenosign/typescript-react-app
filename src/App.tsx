@@ -7,12 +7,13 @@ import Input from "./components/Input";
 import ParentProps from "./components/ParentProps";
 import Section from "./components/Section";
 import Tail from "./components/Tail";
+import TestHeader from "./components/TestHeader";
 import Todo from "./components/Todo";
 
 function App() {
   return (
     <div className="App">
-      <Tail />
+      <TestHeader isLogin={true} userID="Tetz" />
     </div>
   );
 }
